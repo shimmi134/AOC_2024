@@ -84,7 +84,7 @@ Once again consider your left and right lists. What is their similarity score?
 
 To run the code, first use `make` to compile everything into `lib.a`
 
-Once done, compile with `cc -Wall -Werror -Wextra ex01 lib.a`
+Once done, compile with `cc -Wall -Werror -Wextra ex01.c lib.a`
 
 And run with `./a.out <name_of_input_file>`
 
