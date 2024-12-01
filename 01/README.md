@@ -82,6 +82,9 @@ Once again consider your left and right lists. What is their similarity score?
 
 --- How to run ---
 To run the code, first use `make` to compile everything into `lib.a`
+
 Once done, compile with `cc -Wall -Werror -Wextra ex01 lib.a`
+
 And run with `./a.out <name_of_input_file>`
+
 You'll get two results. The first one represents the first part, and the second one represents the second.
