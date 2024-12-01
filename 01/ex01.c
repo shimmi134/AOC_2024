@@ -6,7 +6,7 @@
 /*   By: shimi-be <shimi-be@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 13:59:29 by shimi-be          #+#    #+#             */
-/*   Updated: 2024/12/01 15:48:14 by shimi-be         ###   ########.fr       */
+/*   Updated: 2024/12/01 18:15:50 by shimi-be         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,8 @@ void	sort_arr(int *arr1, int *arr2)
 {
 	int i;
 	int j;
-	int count1 = 0;
-	int count2 = 0;
+	//int count1 = 0;
+	//int count2 = 0;
 	int temp;
 
 	j = 0;
@@ -83,24 +83,24 @@ void	sort_arr(int *arr1, int *arr2)
 				temp = arr1[i];
 				arr1[i] = arr1[i+1];
 				arr1[i+1] = temp;
-				count1++;
+				//count1++;
 			}
 			if (arr2[i] > arr2[i+1] && arr2[i+1] != 0)
 			{
 				temp = arr2[i];
 				arr2[i] = arr2[i+1];
 				arr2[i+1] = temp;
-				count2++;
+				//count2++;
 			}
 			i++;
 		}
 		j++;
 	}
-	ft_printf("Moves1: %i\n", count1);
-	ft_printf("Moves2: %i\n", count2);
+	//ft_printf("Moves1: %i\n", count1);
+	//ft_printf("Moves2: %i\n", count2);
 }
 
-int sum_arr(int *arr1, int *arr2)
+int part_1(int *arr1, int *arr2)
 {
 	int i;
 	int result;
@@ -120,7 +120,7 @@ int sum_arr(int *arr1, int *arr2)
 	return (result);
 }
 
-int sum_arr1(int *arr1, int *arr2)
+int part_2(int *arr1, int *arr2)
 {
 	int i;
 	int j;
@@ -154,38 +154,20 @@ int main(int ac, char *av[])
 
 	if (ac != 2)
 		return (-1);
+
 	i = get_number(av);
 	arr1 = (int *)malloc((i+1) * sizeof(int));
 	arr2 = (int *)malloc((i+1) * sizeof(int));
 	arr1[i] = 0;
 	arr2[i] = 0;
+
 	fill_arr(arr1, arr2, av);
-	/*while (arr1[j])
-	{
-		ft_printf("Value [%i] in arr1: %i \n",j, arr1[j]);
-		j++;
-	}
-	j = 0;
-	while (arr2[j])
-	{
-		ft_printf("Value [%i] in arr2: %i \n",j, arr2[j]);
-		j++;
-	}*/
+
 	sort_arr(arr1,arr2);
-	/*while (arr1[j])
-	{
-		ft_printf("Value [%i] in arr1: %i \n",j, arr1[j]);
-		j++;
-	}
-	j = 0;
-	while (arr2[j])
-	{
-		ft_printf("Value [%i] in arr2: %i \n",j, arr2[j]);
-		j++;
-	}*/
-	result = sum_arr(arr1,arr2);
-	ft_printf("Result: %i", result);
-	result = sum_arr1(arr1,arr2);
-	ft_printf("Result: %i", result);
+
+	result = part_1(arr1,arr2);
+	ft_printf("Result: %i\n", result);
+	result = part_2(arr1,arr2);
+	ft_printf("Result: %i\n", result);
 
 }
